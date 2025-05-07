@@ -112,14 +112,15 @@ public class TelaConversor {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String valorCelsius = textCelsius.getText();
-//Utilizando try para um possível erro
+				// Utilizando método try para os resultados corretos se for double executa try
+				// senão executa o catch
 				try {
 					Temperatura temperatura = new Temperatura();
 					double celsius = Double.parseDouble(valorCelsius);
 					temperatura.setCelsius(celsius);
 
 					double fahreinheit = temperatura.converterParaFahreinheit();
-					labelResultado.setText( fahreinheit + " FAHREINHEIT ");
+					labelResultado.setText(fahreinheit + " FAHREINHEIT ");
 					labelMensagemErro.setText(null);
 					textCelsius.requestFocus();
 
@@ -138,7 +139,7 @@ public class TelaConversor {
 			public void actionPerformed(ActionEvent e) {
 				String valorCelsius = textCelsius.getText();
 
-//Utilizando try para um possível erro
+//Utilizando método try para os resultados corretos se for double executa try senão executa o catch
 				try {
 					Temperatura temperatura = new Temperatura();
 					double celsius = Double.parseDouble(valorCelsius);
